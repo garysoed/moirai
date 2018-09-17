@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/garysoed/debug/issues"
   },
-  "homepage": "https://github.com/garysoed/debug#readme"
+  "homepage": "https://github.com/garysoed/debug#readme",
+  "devDependencies": {
+    "gs": "github:garysoed/dev"
+  }
 }

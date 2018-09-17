@@ -1,0 +1,8 @@
+{
+  "commands": [
+    {
+      "command": "lint",
+      "actions": ["tslint -p tsconfig.json -t stylish"]
+    }
+  ]
+}
