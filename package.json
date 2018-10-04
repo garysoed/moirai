@@ -1,5 +1,5 @@
 {
-  "name": "debug",
+  "name": "moirai",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/garysoed/debug.git"
+    "url": "git+https://github.com/garysoed/moirai.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/garysoed/debug/issues"
+    "url": "https://github.com/garysoed/moirai/issues"
   },
-  "homepage": "https://github.com/garysoed/debug#readme",
+  "homepage": "https://github.com/garysoed/moirai#readme",
   "devDependencies": {
     "gs": "github:garysoed/dev"
   }
