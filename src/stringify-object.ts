@@ -11,7 +11,9 @@ export function stringifyObject(target: object, verbosity: number, stringify: St
     }
   }
 
-  const stringifiedProperties = [...properties].join(', ');
+  const stringifiedProperties = [...properties]
+      .map(([key, value]) => `${key}: ${value}`)
+      .join(', ');
 
   return `${ctorName}(${stringifiedProperties})`;
 }
