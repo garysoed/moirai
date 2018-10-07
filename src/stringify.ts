@@ -1,3 +1,4 @@
+import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { stringifyFunction } from './stringify-function';
 import { stringifyNull } from './stringify-null';
@@ -12,14 +13,14 @@ function assertUnreachable(_: never): never {
   throw new Error('Unreachable code reached');
 }
 
-type SimpleTypes = Function|object|string|symbol|boolean|null|undefined;
+type SimpleTypes = Function|object|string|symbol|boolean|null|undefined|unknown[];
 
-export function stringify(target: number, verbosity: number, format: NumberFormat): string;
+export function stringify(target: number, verbosity: number, format?: NumberFormat): string;
 export function stringify(target: SimpleTypes, verbosity: number): string;
 export function stringify(
     target: SimpleTypes|number,
     verbosity: number,
-    format?: NumberFormat): string {
+    format: NumberFormat = NumberFormat.DECIMAL): string {
   if (verbosity === Verbosity.NONE) {
     return '…';
   }
@@ -40,10 +41,12 @@ export function stringify(
     return stringifyString(target, verbosity);
   } else if (typeof target === 'boolean') {
     return stringifyBoolean(target, verbosity);
-  } else if (typeof target === 'object') {
-    return stringifyObject(target, verbosity, stringify);
   } else if (typeof target === 'symbol') {
     return stringifySymbol(target, verbosity);
+  } else if (target instanceof Array) {
+    return stringifyArray(target, verbosity, stringify);
+  } else if (typeof target === 'object') {
+    return stringifyObject(target, verbosity, stringify);
   } else {
     throw assertUnreachable(target);
   }
