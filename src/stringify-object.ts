@@ -1,7 +1,13 @@
+import { customStringify, hasCustomStringify, stringifyCustom } from './stringify-custom';
+
 type StringifyFn = (target: any, verbosity: number) => string;
 
 export function stringifyObject(target: object, verbosity: number, stringify: StringifyFn):
     string {
+  if (hasCustomStringify(target)) {
+    return stringifyCustom(target, verbosity);
+  }
+
   const ctorName = getCtorName(target);
   const properties = new Map();
   for (const key of Object.keys(target)) {
