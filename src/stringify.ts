@@ -9,16 +9,10 @@ import { stringifySymbol } from './stringify-symbol';
 import { stringifyUndefined } from './stringify-undefined';
 import { Verbosity } from './verbosity';
 
-function assertUnreachable(_: never): never {
-  throw new Error('Unreachable code reached');
-}
-
-type SimpleTypes = Function|object|string|symbol|boolean|null|undefined|unknown[];
-
 export function stringify(target: number, verbosity: number, format?: NumberFormat): string;
-export function stringify(target: SimpleTypes, verbosity: number): string;
+export function stringify(target: any, verbosity: number): string;
 export function stringify(
-    target: SimpleTypes|number,
+    target: any,
     verbosity: number,
     format: NumberFormat = NumberFormat.DECIMAL): string {
   if (verbosity === Verbosity.NONE) {
@@ -48,6 +42,6 @@ export function stringify(
   } else if (typeof target === 'object') {
     return stringifyObject(target, verbosity, stringify);
   } else {
-    throw assertUnreachable(target);
+    return `${target}`;
   }
 }
