@@ -1,5 +1,6 @@
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
+import { customStringify, stringifyCustom } from './stringify-custom';
 import { stringifyFunction } from './stringify-function';
 import { stringifyNull } from './stringify-null';
 import { NumberFormat, stringifyNumber } from './stringify-number';
@@ -29,6 +30,8 @@ export function stringify(
     return stringifyUndefined();
   } else if (target === null) {
     return stringifyNull();
+  } else if (target[customStringify] instanceof Function) {
+    return stringifyCustom(target, verbosity);
   } else if (target instanceof Function) {
     return stringifyFunction(target, verbosity);
   } else if (typeof target === 'string') {
