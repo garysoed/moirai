@@ -1,6 +1,7 @@
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';
+import { stringifyError } from './stringify-error';
 import { stringifyFunction } from './stringify-function';
 import { stringifyNull } from './stringify-null';
 import { NumberFormat, stringifyNumber } from './stringify-number';
@@ -20,11 +21,9 @@ export function stringify(
     return '…';
   }
 
-  if (typeof target === 'number') {
-    if (format === undefined) {
-      throw new Error(`Required format is missing`);
-    }
-
+  if (target instanceof Error) {
+    return stringifyError(target, verbosity);
+  } else if (typeof target === 'number') {
     return stringifyNumber(target, verbosity, format);
   } else if (target === undefined) {
     return stringifyUndefined();
