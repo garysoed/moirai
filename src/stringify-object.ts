@@ -1,4 +1,5 @@
 import { customStringify, hasCustomStringify, stringifyCustom } from './stringify-custom';
+import { Verbosity } from './verbosity';
 
 type StringifyFn = (target: any, verbosity: number) => string;
 
@@ -9,6 +10,10 @@ export function stringifyObject(target: object, verbosity: number, stringify: St
   }
 
   const ctorName = getCtorName(target);
+  if (verbosity <= Verbosity.QUIET) {
+    return ctorName;
+  }
+
   const properties = new Map();
   for (const key of Object.keys(target)) {
     const value = stringify((target as any)[key], verbosity - 1);

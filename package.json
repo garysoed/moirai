@@ -18,5 +18,8 @@
   "homepage": "https://github.com/garysoed/moirai#readme",
   "devDependencies": {
     "gs": "github:garysoed/dev"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.1"
   }
 }

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';
@@ -41,6 +42,10 @@ export function stringify(
     return stringifySymbol(target, verbosity);
   } else if (target instanceof Array) {
     return stringifyArray(target, verbosity, stringify);
+  } else if (target instanceof Observable) {
+    return 'Observable';
+  } else if (target instanceof Promise) {
+    return 'Promise';
   } else if (typeof target === 'object') {
     return stringifyObject(target, verbosity, stringify);
   } else {
