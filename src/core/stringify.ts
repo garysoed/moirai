@@ -4,6 +4,7 @@ import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';
 import { stringifyError } from './stringify-error';
 import { stringifyFunction } from './stringify-function';
+import { stringifyMap } from './stringify-map';
 import { stringifyNull } from './stringify-null';
 import { NumberFormat, stringifyNumber } from './stringify-number';
 import { stringifyObject } from './stringify-object';
@@ -40,6 +41,8 @@ export function stringify(
     return stringifyBoolean(target, verbosity);
   } else if (typeof target === 'symbol') {
     return stringifySymbol(target, verbosity);
+  } else if (target instanceof Map) {
+    return stringifyMap(target, verbosity, stringify);
   } else if (target instanceof Array) {
     return stringifyArray(target, verbosity, stringify);
   } else if (target instanceof Observable) {

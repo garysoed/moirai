@@ -1,5 +1,8 @@
 import { Verbosity } from './verbosity';
 
+/**
+ * Types for number formatting.
+ */
 export enum NumberFormat {
   DECIMAL,
   EXPONENT,

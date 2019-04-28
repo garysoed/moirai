@@ -1,4 +1,4 @@
-import { customStringify, hasCustomStringify, stringifyCustom } from './stringify-custom';
+import { hasCustomStringify, stringifyCustom } from './stringify-custom';
 import { Verbosity } from './verbosity';
 
 type StringifyFn = (target: any, verbosity: number) => string;
