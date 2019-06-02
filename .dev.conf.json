@@ -3,6 +3,10 @@
     {
       "command": "lint",
       "actions": ["tslint -p tsconfig.json -t stylish"]
+    },
+    {
+      "command": "link",
+      "actions": ["npm link dev"]
     }
   ]
 }
