@@ -1,12 +1,22 @@
 import { stringify } from '../core/stringify';
-import { Verbosity } from '../core/verbosity';
 
-export function tagDebug(literals: TemplateStringsArray, ...placeholders: any[]): string {
-  let output = '';
-  for (let i = 0; i < placeholders.length; i++) {
-    output += `${literals[i]}${stringify(placeholders[i], Verbosity.DEBUG)}`;
-  }
-  output += literals[literals.length - 1];
+type TemplateTag = (literals: TemplateStringsArray, ...placeholders: any[]) => string;
 
-  return output;
+/**
+ * Tagger to stringify all placeholders in the template string.
+ *
+ * @param verbosity - Verbosity level of the string's placeholders.
+ * @returns The tagger to tag template strings.
+ * @public
+ */
+export function tagStringify(verbosity: number): TemplateTag {
+  return (literals: TemplateStringsArray, ...placeholders: any[]) => {
+    let output = '';
+    for (let i = 0; i < placeholders.length; i++) {
+      output += `${literals[i]}${stringify(placeholders[i], verbosity)}`;
+    }
+    output += literals[literals.length - 1];
+
+    return output;
+  };
 }

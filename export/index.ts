@@ -13,4 +13,4 @@ export { stringify } from '../src/core/stringify';
 export { NumberFormat } from '../src/core/stringify-number';
 export { Verbosity } from '../src/core/verbosity';
 
-export { tagDebug as _debug } from '../src/tag/tag-debug';
+export { tagStringify as _stringify } from '../src/tag/tag-debug';

@@ -17,7 +17,7 @@ Moirai is a library for stringifying JS Objects.
 
 |  Function | Description |
 |  --- | --- |
-|  [\_debug(literals, placeholders)](./moirai._debug.md) |  |
+|  [\_stringify(verbosity)](./moirai._stringify.md) | Tagger to stringify all placeholders in the template string. |
 |  [stringify(target, verbosity, format)](./moirai.stringify.md) | Stringifies the given number. |
 |  [stringify(target, verbosity)](./moirai.stringify_1.md) | Stringifies the given object. |
 

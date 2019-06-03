@@ -19,8 +19,6 @@
  */
 export declare const customStringify: unique symbol;
 
-export declare function _debug(literals: TemplateStringsArray, ...placeholders: any[]): string;
-
 /**
  * Types for number formatting.
  *
@@ -63,6 +61,17 @@ export declare function stringify(target: number, verbosity: number, format?: Nu
  * @public
  */
 export declare function stringify(target: any, verbosity: number): string;
+
+/**
+ * Tagger to stringify all placeholders in the template string.
+ *
+ * @param verbosity - Verbosity level of the string's placeholders.
+ * @returns The tagger to tag template strings.
+ * @public
+ */
+export declare function _stringify(verbosity: number): TemplateTag;
+
+declare type TemplateTag = (literals: TemplateStringsArray, ...placeholders: any[]) => string;
 
 /**
  * Verbosity levels of stringified objects.

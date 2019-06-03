@@ -16,8 +16,8 @@
       "members": [
         {
           "kind": "Function",
-          "canonicalReference": "(_debug:0)",
-          "docComment": "",
+          "canonicalReference": "(_stringify:0)",
+          "docComment": "/**\n * Tagger to stringify all placeholders in the template string.\n *\n * @param verbosity - Verbosity level of the string's placeholders.\n *\n * @returns The tagger to tag template strings.\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -25,7 +25,7 @@
             },
             {
               "kind": "Reference",
-              "text": "tagDebug"
+              "text": "tagStringify"
             },
             {
               "kind": "Content",
@@ -33,23 +33,7 @@
             },
             {
               "kind": "Reference",
-              "text": "literals"
-            },
-            {
-              "kind": "Content",
-              "text": ": "
-            },
-            {
-              "kind": "Reference",
-              "text": "TemplateStringsArray"
-            },
-            {
-              "kind": "Content",
-              "text": ", ..."
-            },
-            {
-              "kind": "Reference",
-              "text": "placeholders"
+              "text": "verbosity"
             },
             {
               "kind": "Content",
@@ -57,15 +41,15 @@
             },
             {
               "kind": "Content",
-              "text": "any[]"
+              "text": "number"
             },
             {
               "kind": "Content",
               "text": "): "
             },
             {
-              "kind": "Content",
-              "text": "string"
+              "kind": "Reference",
+              "text": "TemplateTag"
             },
             {
               "kind": "Content",
@@ -73,28 +57,21 @@
             }
           ],
           "returnTypeTokenRange": {
-            "startIndex": 11,
-            "endIndex": 12
+            "startIndex": 7,
+            "endIndex": 8
           },
           "releaseTag": "Public",
           "overloadIndex": 0,
           "parameters": [
             {
-              "parameterName": "literals",
+              "parameterName": "verbosity",
               "parameterTypeTokenRange": {
                 "startIndex": 5,
                 "endIndex": 6
               }
-            },
-            {
-              "parameterName": "placeholders",
-              "parameterTypeTokenRange": {
-                "startIndex": 9,
-                "endIndex": 10
-              }
             }
           ],
-          "name": "_debug"
+          "name": "_stringify"
         },
         {
           "kind": "Enum",

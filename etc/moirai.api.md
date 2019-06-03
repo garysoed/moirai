@@ -7,9 +7,6 @@
 // @public
 export const customStringify: unique symbol;
 
-// @public (undocumented)
-export function _debug(literals: TemplateStringsArray, ...placeholders: any[]): string;
-
 // @public
 export enum NumberFormat {
     // (undocumented)
@@ -24,6 +21,11 @@ export function stringify(target: number, verbosity: number, format?: NumberForm
 
 // @public
 export function stringify(target: any, verbosity: number): string;
+
+// Warning: (ae-forgotten-export) The symbol "TemplateTag" needs to be exported by the entry point index.d.ts
+// 
+// @public
+export function _stringify(verbosity: number): TemplateTag;
 
 // @public
 export enum Verbosity {
