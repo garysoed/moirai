@@ -13,7 +13,24 @@ import { stringifySymbol } from './stringify-symbol';
 import { stringifyUndefined } from './stringify-undefined';
 import { Verbosity } from './verbosity';
 
+/**
+ * Stringifies the given number.
+ *
+ * @param target - The number to stringify.
+ * @param verbosity - Verbosity level.
+ * @param format - Format of the number.
+ * @returns The stringified number.
+ * @public
+ */
 export function stringify(target: number, verbosity: number, format?: NumberFormat): string;
+/**
+ * Stringifies the given object.
+ *
+ * @param target - The object to stringify.
+ * @param verbosity - Verbosity level.
+ * @returns The stringified object.
+ * @public
+ */
 export function stringify(target: any, verbosity: number): string;
 export function stringify(
     target: any,

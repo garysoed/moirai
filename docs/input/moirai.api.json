@@ -1,0 +1,535 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.1.6",
+    "schemaVersion": 1000
+  },
+  "kind": "Package",
+  "canonicalReference": "moirai",
+  "docComment": "/**\n * Moirai is a library for stringifying JS Objects.\n *\n * @remarks\n *\n * This is used mainly for printing out objects for debugging purposes.\n *\n * @packageDocumentation @public\n */\n",
+  "name": "moirai",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "",
+      "name": "",
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "(_debug:0)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function "
+            },
+            {
+              "kind": "Reference",
+              "text": "tagDebug"
+            },
+            {
+              "kind": "Content",
+              "text": "("
+            },
+            {
+              "kind": "Reference",
+              "text": "literals"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Reference",
+              "text": "TemplateStringsArray"
+            },
+            {
+              "kind": "Content",
+              "text": ", ..."
+            },
+            {
+              "kind": "Reference",
+              "text": "placeholders"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Content",
+              "text": "any[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 0,
+          "parameters": [
+            {
+              "parameterName": "literals",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "placeholders",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              }
+            }
+          ],
+          "name": "_debug"
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "(NumberFormat:enum)",
+          "docComment": "/**\n * Types for number formatting.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum "
+            },
+            {
+              "kind": "Reference",
+              "text": "NumberFormat"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "NumberFormat",
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "DECIMAL",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "DECIMAL"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "0"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "DECIMAL",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "EXPONENT",
+              "docComment": "/**\n * Rounds the number to 3 most significant figures, and display them as exponent. For 1234, it is 1.23e3.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "EXPONENT"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "EXPONENT",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "HEX",
+              "docComment": "/**\n * 0x1234\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "HEX"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "HEX",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "OCTAL",
+              "docComment": "/**\n * 0o1234\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "OCTAL"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "3"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "OCTAL",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ]
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "(stringify:0)",
+          "docComment": "/**\n * Stringifies the given number.\n *\n * @param target - The number to stringify.\n *\n * @param verbosity - Verbosity level.\n *\n * @param format - Format of the number.\n *\n * @returns The stringified number.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function "
+            },
+            {
+              "kind": "Reference",
+              "text": "stringify"
+            },
+            {
+              "kind": "Content",
+              "text": "("
+            },
+            {
+              "kind": "Reference",
+              "text": "target"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ", "
+            },
+            {
+              "kind": "Reference",
+              "text": "verbosity"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ", "
+            },
+            {
+              "kind": "Reference",
+              "text": "format"
+            },
+            {
+              "kind": "Content",
+              "text": "?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "NumberFormat"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 15,
+            "endIndex": 16
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 0,
+          "parameters": [
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "verbosity",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              }
+            },
+            {
+              "parameterName": "format",
+              "parameterTypeTokenRange": {
+                "startIndex": 13,
+                "endIndex": 14
+              }
+            }
+          ],
+          "name": "stringify"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "(stringify:1)",
+          "docComment": "/**\n * Stringifies the given object.\n *\n * @param target - The object to stringify.\n *\n * @param verbosity - Verbosity level.\n *\n * @returns The stringified object.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function "
+            },
+            {
+              "kind": "Reference",
+              "text": "stringify"
+            },
+            {
+              "kind": "Content",
+              "text": "("
+            },
+            {
+              "kind": "Reference",
+              "text": "target"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ", "
+            },
+            {
+              "kind": "Reference",
+              "text": "verbosity"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "target",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "verbosity",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 10
+              }
+            }
+          ],
+          "name": "stringify"
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "(Verbosity:enum)",
+          "docComment": "/**\n * Verbosity levels of stringified objects.\n *\n * @remarks\n *\n * These levels are just integers. Those the values are specified in this enum, you can pass any numbers as you wish.\n *\n * When stringifying an object, the verbosity level drops by one every time the function recursively stringifies the object's properties.\n *\n * For example:\n * ```ts\n * // Suppose example is stringified with verbosity = 2.\n * const example = {\n *   a: { // This will be stringified with verbosity = 1\n *     b: { // This will be stringified with verbosity = 0\n *       c: {} // This will not be stringified.\n *     },\n *     d: 2, // This will be stringified with verbosity = 1\n *   }\n * };\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum "
+            },
+            {
+              "kind": "Reference",
+              "text": "Verbosity"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Verbosity",
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "DEBUG",
+              "docComment": "/**\n * Verbose, useful for debugging.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "DEBUG"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "2"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "DEBUG",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "NONE",
+              "docComment": "/**\n * Nothing is printed out.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "NONE"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "0"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "NONE",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "QUIET",
+              "docComment": "/**\n * Just enough to identify stuff ... maybe.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Reference",
+                  "text": "QUIET"
+                },
+                {
+                  "kind": "Content",
+                  "text": " = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "releaseTag": "Public",
+              "name": "QUIET",
+              "initializerTokenRange": {
+                "startIndex": 2,
+                "endIndex": 3
+              }
+            }
+          ]
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "customStringify",
+          "docComment": "/**\n * Symbol of custom function to stringify an object.\n *\n * @remarks\n *\n * The function takes in a Verbosity and returns the custom string.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Reference",
+              "text": "customStringify"
+            },
+            {
+              "kind": "Content",
+              "text": ": "
+            },
+            {
+              "kind": "Content",
+              "text": "unique symbol"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "customStringify",
+          "variableTypeTokenRange": {
+            "startIndex": 2,
+            "endIndex": 3
+          }
+        }
+      ]
+    }
+  ]
+}

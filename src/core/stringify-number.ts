@@ -2,11 +2,26 @@ import { Verbosity } from './verbosity';
 
 /**
  * Types for number formatting.
+ *
+ * @public
  */
 export enum NumberFormat {
   DECIMAL,
+
+  /**
+   * Rounds the number to 3 most significant figures, and display them as exponent. For 1234, it is
+   * 1.23e3.
+   */
   EXPONENT,
+
+  /**
+   * 0x1234
+   */
   HEX,
+
+  /**
+   * 0o1234
+   */
   OCTAL,
 }
 

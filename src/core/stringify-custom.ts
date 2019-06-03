@@ -1,3 +1,11 @@
+/**
+ * Symbol of custom function to stringify an object.
+ *
+ * @remarks
+ * The function takes in a Verbosity and returns the custom string.
+ *
+ * @public
+ */
 export const customStringify = Symbol('customStringify');
 
 type CustomObject = object & {[customStringify](verbosity: number): string};
