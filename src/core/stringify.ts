@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable } from '@rxjs';
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';

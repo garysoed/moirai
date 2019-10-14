@@ -26,6 +26,10 @@ export function stringifyObject(target: object, verbosity: number, stringify: St
       .map(([key, value]) => `${key}: ${value}`)
       .join(', ');
 
+  if (ctorName === DEFAULT_CTOR_NAME) {
+    return `{${stringifiedProperties}}`;
+  }
+
   return `${ctorName}(${stringifiedProperties})`;
 }
 

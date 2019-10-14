@@ -38,5 +38,5 @@ export enum Verbosity {
   /**
    * Verbose, useful for debugging.
    */
-  DEBUG = 2,
+  DEBUG = 4,
 }
