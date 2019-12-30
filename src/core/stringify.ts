@@ -1,4 +1,5 @@
 import { Observable } from '@rxjs';
+
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';
@@ -8,6 +9,7 @@ import { stringifyMap } from './stringify-map';
 import { stringifyNull } from './stringify-null';
 import { NumberFormat, stringifyNumber } from './stringify-number';
 import { stringifyObject } from './stringify-object';
+import { stringifyRegexp } from './stringify-regexp';
 import { stringifyString } from './stringify-string';
 import { stringifySymbol } from './stringify-symbol';
 import { stringifyUndefined } from './stringify-undefined';
@@ -42,6 +44,8 @@ export function stringify(
 
   if (target instanceof Error) {
     return stringifyError(target, verbosity);
+  } else if (target instanceof RegExp) {
+    return stringifyRegexp(target);
   } else if (typeof target === 'number') {
     return stringifyNumber(target, verbosity, format);
   } else if (target === undefined) {
