@@ -57,7 +57,7 @@ export function stringify(
   } else if (target instanceof Function) {
     return stringifyFunction(target, verbosity);
   } else if (typeof target === 'string') {
-    return stringifyString(target, verbosity);
+    return stringifyString(target);
   } else if (typeof target === 'boolean') {
     return stringifyBoolean(target, verbosity);
   } else if (typeof target === 'symbol') {
