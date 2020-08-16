@@ -10,6 +10,7 @@ import { stringifyNull } from './stringify-null';
 import { NumberFormat, stringifyNumber } from './stringify-number';
 import { stringifyObject } from './stringify-object';
 import { stringifyRegexp } from './stringify-regexp';
+import { stringifySet } from './stringify-set';
 import { stringifyString } from './stringify-string';
 import { stringifySymbol } from './stringify-symbol';
 import { stringifyUndefined } from './stringify-undefined';
@@ -64,6 +65,8 @@ export function stringify(
     return stringifySymbol(target, verbosity);
   } else if (target instanceof Map) {
     return stringifyMap(target, verbosity, stringify);
+  } else if (target instanceof Set) {
+    return stringifySet(target, verbosity, stringify);
   } else if (target instanceof Array) {
     return stringifyArray(target, verbosity, stringify);
   } else if (target instanceof Observable) {
