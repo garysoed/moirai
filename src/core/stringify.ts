@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';
+import { stringifyElement } from './stringify-element';
 import { stringifyError } from './stringify-error';
 import { stringifyFunction } from './stringify-function';
 import { stringifyMap } from './stringify-map';
@@ -73,6 +74,8 @@ export function stringify(
     return 'Observable';
   } else if (target instanceof Promise) {
     return 'Promise';
+  } else if (target instanceof Element) {
+    return stringifyElement(target, verbosity);
   } else if (typeof target === 'object') {
     return stringifyObject(target, verbosity, stringify);
   } else {
