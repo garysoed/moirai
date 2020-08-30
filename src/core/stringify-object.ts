@@ -5,6 +5,10 @@ type StringifyFn = (target: any, verbosity: number) => string;
 
 export function stringifyObject(target: object, verbosity: number, stringify: StringifyFn):
     string {
+  if (target instanceof Window) {
+    return '(Window)';
+  }
+
   if (hasCustomStringify(target)) {
     return stringifyCustom(target, verbosity);
   }
