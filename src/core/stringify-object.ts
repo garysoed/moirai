@@ -1,3 +1,4 @@
+import { isBrowserContext } from './is-browser-context';
 import { hasCustomStringify, stringifyCustom } from './stringify-custom';
 import { Verbosity } from './verbosity';
 
@@ -5,7 +6,7 @@ type StringifyFn = (target: any, verbosity: number) => string;
 
 export function stringifyObject(target: object, verbosity: number, stringify: StringifyFn):
     string {
-  if (target instanceof Window) {
+  if (isBrowserContext() && target instanceof Window) {
     return '(Window)';
   }
 

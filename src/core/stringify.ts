@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 
+import { isBrowserContext } from './is-browser-context';
 import { stringifyArray } from './stringify-array';
 import { stringifyBoolean } from './stringify-boolean';
 import { customStringify, stringifyCustom } from './stringify-custom';
@@ -16,6 +17,7 @@ import { stringifyString } from './stringify-string';
 import { stringifySymbol } from './stringify-symbol';
 import { stringifyUndefined } from './stringify-undefined';
 import { Verbosity } from './verbosity';
+
 
 /**
  * Stringifies the given number.
@@ -74,7 +76,7 @@ export function stringify(
     return 'Observable';
   } else if (target instanceof Promise) {
     return 'Promise';
-  } else if (target instanceof Element) {
+  } else if (isBrowserContext() && target instanceof Element) {
     return stringifyElement(target, verbosity);
   } else if (typeof target === 'object') {
     return stringifyObject(target, verbosity, stringify);
