@@ -1,3 +1,3 @@
 export function stringifyUndefined(): string {
-  return '';
+  return 'undefined';
 }
