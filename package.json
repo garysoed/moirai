@@ -20,6 +20,6 @@
     "gs": "github:garysoed/dev"
   },
   "dependencies": {
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.6.7"
   }
 }

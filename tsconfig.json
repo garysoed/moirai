@@ -1,25 +1,12 @@
 {
+  "extends": "devbase/ts",
   "compilerOptions": {
-    "alwaysStrict": true,
     "baseUrl": ".",
-    "declaration": true,
-    "declarationMap": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
     "outDir": "out",
-    "pretty": true,
-    "sourceMap": true,
-    "strict": true,
-    "strictFunctionTypes": true,
-    "target": "es6"
+    "paths": {
+      "rxjs": ["node_modules/rxjs"],
+      "rxjs/*": ["node_modules/rxjs/*"],
+    }
   },
   "include": [
     "export/**/*.ts",
