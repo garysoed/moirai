@@ -1,3 +1,9 @@
+
 export function stringifyString(target: string): string {
-  return `"${target}"`;
+  const lines = target.split('\n');
+  const trunc = lines.slice(0, 10);
+  if (lines.length > 10) {
+    trunc.push('…');
+  }
+  return `"${trunc.join('\n')}"`;
 }
