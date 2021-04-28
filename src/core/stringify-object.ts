@@ -1,6 +1,6 @@
-import { isBrowserContext } from './is-browser-context';
-import { hasCustomStringify, stringifyCustom } from './stringify-custom';
-import { Verbosity } from './verbosity';
+import {isBrowserContext} from './is-browser-context';
+import {hasCustomStringify, stringifyCustom} from './stringify-custom';
+import {Verbosity} from './verbosity';
 
 type StringifyFn = (target: any, verbosity: number) => string;
 

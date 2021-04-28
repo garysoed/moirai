@@ -1,4 +1,4 @@
-import { Verbosity } from './verbosity';
+import {Verbosity} from './verbosity';
 
 /**
  * Types for number formatting.

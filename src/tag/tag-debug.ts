@@ -1,4 +1,4 @@
-import { stringify } from '../core/stringify';
+import {stringify} from '../core/stringify';
 
 type TemplateTag = (literals: TemplateStringsArray, ...placeholders: any[]) => string;
 

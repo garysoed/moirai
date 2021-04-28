@@ -1,22 +1,22 @@
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 
-import { isBrowserContext } from './is-browser-context';
-import { stringifyArray } from './stringify-array';
-import { stringifyBoolean } from './stringify-boolean';
-import { customStringify, stringifyCustom } from './stringify-custom';
-import { stringifyElement } from './stringify-element';
-import { stringifyError } from './stringify-error';
-import { stringifyFunction } from './stringify-function';
-import { stringifyMap } from './stringify-map';
-import { stringifyNull } from './stringify-null';
-import { NumberFormat, stringifyNumber } from './stringify-number';
-import { stringifyObject } from './stringify-object';
-import { stringifyRegexp } from './stringify-regexp';
-import { stringifySet } from './stringify-set';
-import { stringifyString } from './stringify-string';
-import { stringifySymbol } from './stringify-symbol';
-import { stringifyUndefined } from './stringify-undefined';
-import { Verbosity } from './verbosity';
+import {isBrowserContext} from './is-browser-context';
+import {stringifyArray} from './stringify-array';
+import {stringifyBoolean} from './stringify-boolean';
+import {customStringify, stringifyCustom} from './stringify-custom';
+import {stringifyElement} from './stringify-element';
+import {stringifyError} from './stringify-error';
+import {stringifyFunction} from './stringify-function';
+import {stringifyMap} from './stringify-map';
+import {stringifyNull} from './stringify-null';
+import {NumberFormat, stringifyNumber} from './stringify-number';
+import {stringifyObject} from './stringify-object';
+import {stringifyRegexp} from './stringify-regexp';
+import {stringifySet} from './stringify-set';
+import {stringifyString} from './stringify-string';
+import {stringifySymbol} from './stringify-symbol';
+import {stringifyUndefined} from './stringify-undefined';
+import {Verbosity} from './verbosity';
 
 
 /**
@@ -39,6 +39,7 @@ export function stringify(target: number, verbosity: number, format?: NumberForm
  */
 export function stringify(target: any, verbosity: number): string;
 export function stringify(
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     target: any,
     verbosity: number,
     format: NumberFormat = NumberFormat.DECIMAL): string {
@@ -63,7 +64,7 @@ export function stringify(
   } else if (typeof target === 'string') {
     return stringifyString(target);
   } else if (typeof target === 'boolean') {
-    return stringifyBoolean(target, verbosity);
+    return stringifyBoolean(target);
   } else if (typeof target === 'symbol') {
     return stringifySymbol(target, verbosity);
   } else if (target instanceof Map) {
@@ -77,7 +78,7 @@ export function stringify(
   } else if (target instanceof Promise) {
     return 'Promise';
   } else if (isBrowserContext() && target instanceof Element) {
-    return stringifyElement(target, verbosity);
+    return stringifyElement(target);
   } else if (typeof target === 'object') {
     return stringifyObject(target, verbosity, stringify);
   } else {

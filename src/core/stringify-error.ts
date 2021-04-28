@@ -1,4 +1,4 @@
-import { Verbosity } from './verbosity';
+import {Verbosity} from './verbosity';
 
 export function stringifyError(target: Error, verbosity: number):
     string {

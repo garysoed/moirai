@@ -1,3 +1,3 @@
-export function stringifyElement(target: Element, verbosity: number): string {
+export function stringifyElement(target: Element): string {
   return `<${target.tagName.toLowerCase()} />`;
 }

@@ -1,6 +1,6 @@
 export function stringifyFunction(target: Function, verbosity: number): string {
   if (verbosity <= 0) {
-    return `() => {}`;
+    return '() => {}';
   }
 
   if (verbosity <= 1) {

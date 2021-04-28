@@ -1,3 +1,3 @@
-export function stringifyBoolean(target: boolean, verbosity: number): string {
+export function stringifyBoolean(target: boolean): string {
   return target ? 'T' : 'F';
 }

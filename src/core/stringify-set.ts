@@ -1,4 +1,4 @@
-import { Verbosity } from './verbosity';
+import {Verbosity} from './verbosity';
 
 type StringifyFn = (target: any, verbosity: number) => string;
 

@@ -16,6 +16,7 @@ export function stringifyCustom(
   return target[customStringify](verbosity);
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function hasCustomStringify(target: any): target is CustomObject {
   return target[customStringify] instanceof Function;
 }
