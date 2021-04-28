@@ -1,9 +1,5 @@
 .DS_Store
-bazel-bin
-bazel-genfiles
-bazel-gs-tools
-bazel-out
-bazel-testlogs
+bazel-*
 npm-debug.log
 bin/
 bower_components/

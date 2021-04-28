@@ -1,14 +1,15 @@
 {
-  "extends": "devbase/ts",
+  "extends": "./node_modules/devbase/ts/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "out",
     "paths": {
-      "rxjs": ["node_modules/rxjs"],
-      "rxjs/*": ["node_modules/rxjs/*"],
+      "rxjs": [
+        "node_modules/rxjs"
+      ],
+      "rxjs/*": [
+        "node_modules/rxjs/*"
+      ],
     }
   },
-  "include": [
-    "export/**/*.ts",
-  ]
 }

@@ -8,9 +8,9 @@
  * @public
  */
 
-export { customStringify } from '../src/core/stringify-custom';
-export { stringify } from '../src/core/stringify';
-export { NumberFormat } from '../src/core/stringify-number';
-export { Verbosity } from '../src/core/verbosity';
+export {customStringify} from '../src/core/stringify-custom';
+export {stringify} from '../src/core/stringify';
+export {NumberFormat} from '../src/core/stringify-number';
+export {Verbosity} from '../src/core/verbosity';
 
-export { tagStringify as _stringify } from '../src/tag/tag-debug';
+export {tagStringify as _stringify} from '../src/tag/tag-debug';
