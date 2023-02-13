@@ -1,3 +1,4 @@
+import {truncateContents} from './truncate-contents';
 import {Verbosity} from './verbosity';
 
 type StringifyFn = (target: any, verbosity: number) => string;
@@ -8,9 +9,9 @@ export function stringifyArray(target: unknown[], verbosity: number, stringify: 
     return '';
   }
 
-  const stringifiedProperties = target
-      .map(value => stringify(value, verbosity - 1))
-      .join(', ');
+  const stringifiedProperties = truncateContents(
+      target.map(value => stringify(value, verbosity - 1)),
+  ).join(', ');
 
   return `[${stringifiedProperties}]`;
 }

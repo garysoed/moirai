@@ -1,5 +1,6 @@
 import {isBrowserContext} from './is-browser-context';
 import {hasCustomStringify, stringifyCustom} from './stringify-custom';
+import {truncateContents} from './truncate-contents';
 import {Verbosity} from './verbosity';
 
 type StringifyFn = (target: any, verbosity: number) => string;
@@ -27,9 +28,9 @@ export function stringifyObject(target: object, verbosity: number, stringify: St
     }
   }
 
-  const stringifiedProperties = [...properties]
-      .map(([key, value]) => `${key}: ${value}`)
-      .join(', ');
+  const stringifiedProperties = truncateContents(
+      [...properties].map(([key, value]) => `${key}: ${value}`),
+  ).join(', ');
 
   if (ctorName === DEFAULT_CTOR_NAME) {
     return `{${stringifiedProperties}}`;
