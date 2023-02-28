@@ -48,6 +48,9 @@ function stringifyDecimal(target: number, verbosity: number): string {
 }
 
 function stringifyExponent(target: number): string {
+  if (target < 0) {
+    return `-${stringifyExponent(Math.abs(target))}`;
+  }
   const exp = Math.floor(Math.log10(target));
   const num = target / Math.pow(10, exp);
   const rounded = Math.round(num * 100) / 100;
